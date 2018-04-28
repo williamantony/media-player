@@ -1,0 +1,11 @@
+.PlayerControlsSeekBar {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  background-color: #eee;
+}
+.PlayerControlsSeekBar__progress {
+  width: 75%;
+  height: 100%;;
+  background-color: red;
+}
