@@ -13,9 +13,10 @@
 
 .button {
   position: relative;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  cursor: pointer;
 }
 .button > .img {
   position: absolute;
@@ -27,19 +28,20 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
+.button:not(.button--playpause) {
+  opacity: 0.75;
+}
+.button:not(.button--playpause):hover {
+  opacity: 1.0;
+}
+.button:not(.button--playpause) > .img {
+  filter: grayscale(1);
+}
 .button--playpause {
   width: 75px;
   height: 75px;
-  margin: 0px 15px;
+  border-radius: 50%;
   background-color: #d90f22;
-}
-.button--prev {
-  width: 35px;
-  height: 35px;
-}
-.button--next {
-  width: 35px;
-  height: 35px;
 }
 .button--play > .img {
   background-image: url('./images/play.png');
@@ -47,14 +49,29 @@
 }
 .button--pause > .img {
   background-image: url('./images/pause.png');
+  background-size: 50% auto;
+}
+.button--stop > .img {
+  background-image: url('./images/stop.png');
+  background-size: 40% auto;
 }
 .button--prev > .img {
   background-image: url('./images/next.png');
+  background-size: 35% auto;
   transform: rotate(-180deg);
 }
 .button--next > .img {
   background-image: url('./images/next.png');
+  background-size: 35% auto;
 }
 .button--volume > .img {
   background-image: url('./images/volume.png');
+}
+.button--settings > .img {
+  background-image: url('./images/settings.png');
+}
+
+.button--volume > .img,
+.button--settings > .img {
+  background-size: 35% auto;
 }
